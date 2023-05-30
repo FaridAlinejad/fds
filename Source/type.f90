@@ -693,7 +693,9 @@ TYPE MATERIAL_TYPE
    REAL(EB) :: KAPPA_S                                  !< Absorption coefficient (1/m)
    REAL(EB) :: TMP_BOIL                                 !< Boiling temperature (K) of a liquid
    REAL(EB) :: REFRACTIVE_INDEX
+   REAL(EB), DIMENSION(NUM_KAPPA_COEF) :: KAPPA_COEF
    REAL(EB) :: MW=-1._EB                                !< Molecular weight (g/mol)
+   REAL(EB) :: T_SOURCE=-1._EB
    REAL(EB) :: REFERENCE_ENTHALPY                       !< Reference enthalpy (J/kg)
    REAL(EB) :: REFERENCE_ENTHALPY_TEMPERATURE           !< Temperature for the reference enthalpy (J/kg)
    INTEGER :: PYROLYSIS_MODEL                           !< Type of pyrolysis model (SOLID, LIQUID, VEGETATION)
