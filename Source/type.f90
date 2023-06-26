@@ -776,7 +776,6 @@ TYPE SURFACE_TYPE
    REAL(EB) :: MLRPUA                                    !< Specified Mass Loss Rate Per Unit Area (kg/m2/s)
    REAL(EB) :: T_IGN                                     !< Specified ignition time (s)
    REAL(EB) :: SURFACE_DENSITY                           !< Mass per unit area (kg/m2)
-   REAL(EB) :: CELL_SIZE_FACTOR
    REAL(EB) :: CELL_SIZE
    REAL(EB) :: E_COEFFICIENT
    REAL(EB) :: TEXTURE_WIDTH
@@ -848,7 +847,7 @@ TYPE SURFACE_TYPE
    INTEGER, DIMENSION(MAX_LAYERS) :: N_LAYER_MATL,N_LAYER_CELLS_MAX
    REAL(EB), ALLOCATABLE, DIMENSION(:) :: MIN_DIFFUSIVITY
    REAL(EB), ALLOCATABLE, DIMENSION(:) :: LAYER_THICKNESS,INTERNAL_HEAT_SOURCE
-   REAL(EB), DIMENSION(MAX_LAYERS) :: LAYER_DENSITY,STRETCH_FACTOR,&
+   REAL(EB), DIMENSION(MAX_LAYERS) :: LAYER_DENSITY,CELL_SIZE_FACTOR,STRETCH_FACTOR,&
                                       MOISTURE_FRACTION,SURFACE_VOLUME_RATIO,PACKING_RATIO,KAPPA_S=-1._EB,RENODE_DELTA_T
    REAL(EB), DIMENSION(MAX_LAYERS,MAX_MATERIALS) :: DENSITY_ADJUST_FACTOR=1._EB,RHO_S
    CHARACTER(LABEL_LENGTH), ALLOCATABLE, DIMENSION(:) :: MATL_NAME
@@ -1438,6 +1437,7 @@ TYPE INITIALIZATION_TYPE
    REAL(EB) :: DZ=0._EB         !< Spacing (m) of an array of particles
    REAL(EB) :: HEIGHT           !< Height of initialization region (m)
    REAL(EB) :: RADIUS           !< Radius of initialization region, like a cone (m)
+   REAL(EB) :: INNER_RADIUS     !< Inner radius of initialization region, like a conical shell (m)
    REAL(EB) :: DIAMETER=-1._EB  !< Diameter of liquid droplets specified on an INIT line (m)
    REAL(EB) :: PARTICLE_WEIGHT_FACTOR !< Multiplicative factor for particles specified on the INIT line
    REAL(EB) :: BULK_DENSITY_FACTOR !< Multiplicative factor for values read in from BULK_DENSITY_FILE
